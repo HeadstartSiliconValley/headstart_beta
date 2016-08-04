@@ -13,52 +13,69 @@
   <link href="{% static 'home/css/style.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
 </head>
 <body>
+	<style>
+  @font-face {
+		font-family: Raleway;
+		src: url({% static 'home/fonts/Raleway-Medium.ttf' %});
+	}
+
+	a.arrow {
+		color: rgba(255,255,255,0.6);
+	}
+
+	a.arrow:hover {
+		color: rgba(255,255,255,1);
+	}
+	</style>
   <div id="index-banner" class="parallax-container" style="height: 1020px; background-color: rgba(0, 0, 0, 0.31);">
     <div class="section no-pad-bot">
-      <div class="container row" style="margin-top: 50px; border-bottom: solid; border-width: 1px; text-align: center;">
-          <div class="col s6 offset-s3 row">
-            <div class="col s3">
-              <h5><a href=# style="color: white;">Home</a></h5>
+      <div class="container row" style="margin-bottom: 7px; margin-top: 50px; border-bottom: solid; border-width: 1px; text-align: center;">
+          <div class="col s9 row">
+            <div class="col s2 offset-s2">
+              <h5><a class="arrow" href=# style="font-weight: 200;">Home</a></h5>
             </div>
-            <div class="col s3">
-              <h5><a href=# style="color: white;">About</a></h5>
+            <div class="col s2">
+              <h5><a class="arrow" href=# style="font-weight: 200;">About</a></h5>
             </div>
-            <div class="col s3">
-              <h5><a href=# style="color: white;">Courses <i class="fa fa-1x fa-angle-down" aria-hidden="true"></i></a></h5>
+            <div class="col s2">
+              <h5><a class="arrow" href=# style="font-weight: 200;">Projects</a></h5>
             </div>
-            <div class="col s3">
-              <h5><a href=# style="color: white;">News</a></h5>
+            <div class="col s2">
+              <h5><a class="arrow" href=# style="font-weight: 200;">Courses</a></h5>
+            </div>
+            <div class="col s2">
+              <h5><a class="arrow" href=# style="font-weight: 200;">News</a></h5>
             </div>
           </div>
           <div class="col s3" style="text-align: right;">
-          <a href=# class="waves-effect waves-light btn-large white" style="margin-bottom:10px; border-radius: 50px; color: rgba(0,0,0,0.5); width: 150px;">Login</a>
+          <a href=# class="waves-effect waves btn-large white" style="margin-bottom:10px; border-radius: 50px; color: rgba(0,0,0,0.5); width: 150px;">Login</a>
           </div>
       </div>
     </div>
     <div class="section no-pad-bot">
       <div class="container row valign-wrapper" style="height: 600px; margin-bottom: 0px;">
         <div class="col s1 valign center-align">
-          <a href=#><i class="fa fa-5x fa-chevron-left" aria-hidden="true" style="color: rgba(255,255,255,0.6);"></i></a>
+          <a class="arrow" href=#><i class="fa fa-5x fa-chevron-left" aria-hidden="true"></i></a>
         </div>
         <div class="col s5 valign center-align">
           <img src="{% static 'home/logo.png' %}" style="width: 70%;"/>
         </div>
         <div class="col s5 valign ">
-        <h2>Challange<br>Your<br>Near Future</h2>
-        <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam pellentesque eget mi at mollis. Nullam cursus porttitor sapien.</h5>
+        <h2 style="font-family: Raleway;">Challange<br>Your<br>Near Future</h2>
+        <h5 style="font-weight: 200;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam pellentesque eget mi at mollis. Nullam cursus porttitor sapien.</h5>
         </div>
         <div class="col s1 valign center-align">
-          <a href=#><i class="fa fa-5x fa-chevron-right" style="color: rgba(255,255,255,0.6);" aria-hidden="true"></i></a>
+          <a class="arrow" href=#><i class="fa fa-5x fa-chevron-right" aria-hidden="true"></i></a>
         </div>
       </div>
     </div>
     <div class="center-align">
-    <a class="white waves-effect waves-light btn-large valign" style="margin-bottom:10px; border-radius: 50px; color: rgba(0,0,0,0.5); width: 300px; height: 80px; padding: auto;"></a>
+    <a class="white waves-effect waves btn-large valign" style="margin-bottom:10px; border-radius: 50px; color: rgba(0,0,0,0.5); width: 300px; height: 80px; padding: auto;"></a>
     </div>
     <div class="parallax"><img src="{% static 'home/background.jpg' %}" alt="Unsplashed background img 1"></div>
   </div>
 
-  <div class="grey darken-3 white-text" style="padding-top: 20px; padding-bottom: 30px;">
+  <div class="grey darken-3 white-text z-depth-2" style="padding-top: 20px; padding-bottom: 30px;">
     <div class="section center">
         <h2>한국 데이터사이언스 교육의 기준은 Headstart입니다.</h2>
         <h5>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</h5>
@@ -92,6 +109,7 @@
           <div class="icon-block">
             <h2 class="center red-text text-lighten-2"><i class="material-icons">settings</i></h2>
             <h5 class="center">Easy to work with</h5>
+						
 
             <p class="light">We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.</p>
           </div>
