@@ -26,6 +26,13 @@
 	a.arrow:hover {
 		color: rgba(255,255,255,1);
 	}
+	div#modal1 {
+		max-width: 400px;
+		min-height: 500px;
+		background-color: HSLA(0, 0%, 100%, 1);
+		text-align: center;
+		padding: 0 10px;
+	}
 	</style>
   <div id="index-banner" class="parallax-container" style="height: 1020px; background-color: rgba(0, 0, 0, 0.31);">
     <div class="section no-pad-bot">
@@ -148,7 +155,6 @@
     </div>
   </div>
 
-
   <div class="parallax-container valign-wrapper">
     <div class="section no-pad-bot">
       <div class="container">
@@ -160,15 +166,6 @@
     <div class="parallax"><img src="{% static 'home/background3.jpg' %}" alt="Unsplashed background img 3"></div>
   </div>
 
-	<div id="modal1" class="modal">
-		<div class="modal-content">
-			<h4>Modal Header</h4>
-			<p>A bunch of text</p>
-		</div>
-		<div class="modal-footer">
-			<a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
-		</div>
-	</div>
 
 	<footer class="page-footer grey darken-2">
     <div class="container">
@@ -204,7 +201,52 @@
       Made by <a class="white-text text-lighten-3" href="http://materializecss.com">Materialize</a>
       </div>
     </div>
-  </footer>
+	</footer>
+
+	<style>
+	div.modal-header {
+		padding-top: 40px;
+		font-family: Raleway;
+	}	
+	</style>
+
+	<div id="modal1" class="modal">
+		<div class="modal-header">
+			<h4>Login</h4>
+		</div>
+		<div class="modal-content">
+			<div class="row">
+				<div class="input-field col s12">
+					<input id="email" type="email" class="left-align validate" placeholder="example@email.com">
+					<label for="email" class="left-align">Email</label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="input-field col s12">
+					<input class="left-align validate" id="password" type="password" placeholder="password">
+					<label class="left-align" for="password">Password</label>
+				</div>
+			</div>
+			<div class="row">
+				  <a class="waves-effect waves-light btn-flat white-text light-blue darken-2"
+						style="width: 100%"><i class="fa fa-facebook-square" aria-hidden="true" style="margin-right: 10px;"></i>페이스북으로 로그인</a>
+			</div>
+			<div class="row">
+				  <a class="waves-effect waves-light btn-flat white-text green"
+						style="width: 100%"><i class="fa fa-square" aria-hidden="true" style="margin-right: 10px;"></i>네이버로 로그인</a>
+			</div>
+		</div>
+		<div class="modal-footer">
+			<a href="#!" style="float: left" class="align-right modal-action modal-close waves-effect waves-light btn-flat">Sign Up</a>
+			<a href="#!" class=" modal-action modal-close waves-effect waves-light btn-flat">Sign In</a>
+		</div>
+	</div>
+
+  <!--  Scripts-->
+	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="{% static 'home/js/materialize.js' %}"></script>
+  <script src="{% static 'home/js/init.js' %}"></script>
+
 	<script>
 		$(document).ready(function(){
 		  // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
@@ -213,11 +255,6 @@
 			$('#modal1').closeModal();
 		});
 	</script>
-
-  <!--  Scripts-->
-  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script src="{% static 'home/js/materialize.js' %}"></script>
-  <script src="{% static 'home/js/init.js' %}"></script>
 
   </body>
 </html>
