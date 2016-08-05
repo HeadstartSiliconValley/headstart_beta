@@ -48,7 +48,7 @@
             </div>
           </div>
           <div class="col s3" style="text-align: right;">
-          <a href=# class="waves-effect waves btn-large white" style="margin-bottom:10px; border-radius: 50px; color: rgba(0,0,0,0.5); width: 150px;">Login</a>
+          <a href="#modal1" class="waves-effect waves btn-large white modal-trigger" style="margin-bottom:10px; border-radius: 50px; color: rgba(0,0,0,0.5); width: 150px;">Login</a>
           </div>
       </div>
     </div>
@@ -160,7 +160,17 @@
     <div class="parallax"><img src="{% static 'home/background3.jpg' %}" alt="Unsplashed background img 3"></div>
   </div>
 
-  <footer class="page-footer grey darken-2">
+	<div id="modal1" class="modal">
+		<div class="modal-content">
+			<h4>Modal Header</h4>
+			<p>A bunch of text</p>
+		</div>
+		<div class="modal-footer">
+			<a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+		</div>
+	</div>
+
+	<footer class="page-footer grey darken-2">
     <div class="container">
       <div class="row">
         <div class="col l6 s12">
@@ -195,7 +205,14 @@
       </div>
     </div>
   </footer>
-
+	<script>
+		$(document).ready(function(){
+		  // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+			$('.modal-trigger').leanModal();
+			$('#modal1').openModal();
+			$('#modal1').closeModal();
+		});
+	</script>
 
   <!--  Scripts-->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
