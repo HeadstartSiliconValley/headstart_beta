@@ -18,76 +18,76 @@
 <!-- Facebook login script -->
 <script>
 // 로그인 상태 체크
-function statusChangeCallback(response) { //접속 상태 리턴
-  //로그인 상태에 따라서 출력
-  if (response.status === 'connected') {  //이미 연결된 상태라면?
-    //       console.info(response.authResponse);
-    //alert("Your UID is " + response.authResponse.userID);
-    getFBdata();
-    // getUserPicture(response.authResponse.userID)
+  function statusChangeCallback(response) { //접속 상태 리턴
+    //로그인 상태에 따라서 출력
+    if (response.status === 'connected') {  //이미 연결된 상태라면?
+      //       console.info(response.authResponse);
+      //alert("Your UID is " + response.authResponse.userID);
+      getFBdata();
+      // getUserPicture(response.authResponse.userID)
 
-    $('#login_text').text('Log-out').attr('href', '#');
-  } else {
-    $('#login_text').text('Log-in').attr('href', '#modal1');
+      $('#login_text').text('Log-out').attr('href', '#');
+    } else {
+      $('#login_text').text('Log-in').attr('href', '#modal1');
+    }
   }
-}
 
-//onlogin 핸들러
-function checkLoginState() {
+  //onlogin 핸들러
+  function checkLoginState() {
+    FB.getLoginStatus(function(response) {
+        statusChangeCallback(response);
+       });
+  }
+
+
+  window.fbAsyncInit = function () {
+    FB.init({
+      appId: '152001685237022', // 페이스북 앱 ID
+      status: true, // 로그인 상태
+      cookie: true, // 쿠키 허가
+      xfbml: true, // xfbml 또는 html5
+      version: 'v2.7', // 앱 버전
+  });
   FB.getLoginStatus(function(response) {
       statusChangeCallback(response);
       });
-}
+  };
 
+  // 비동기적으로 SDK 로딩
+  (function (d, s, id) {
+     var js, fjs = d.getElementsByTagName(s)[0];
+       if (d.getElementById(id)) {
+       return;
+     }
+     js = d.createElement(s);
+     js.id = id;
+     //        js.src = "//connect.facebook.net/en_US/sdk.js";  //Eng.ver
+     js.src = "//connect.facebook.net/ko_KR/all.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
 
-window.fbAsyncInit = function () {
-  FB.init({
-    appId: '1622604911363810', // 페이스북 앱 ID
-    status: true, // 로그인 상태
-    cookie: true, // 쿠키 허가
-    xfbml: true, // xfbml 또는 html5
-    version: 'v2.7', // 앱 버전
-});
-FB.getLoginStatus(function(response) {
-    statusChangeCallback(response);
+  function getFBdata() {
+    FB.api('/me', {fields: 'email, gender, name, age_range, link, locale, picture, timezone,verified'}, function(user) {
+        console.log(user);
     });
-};
-
-// 비동기적으로 SDK 로딩
-(function (d, s, id) {
-   var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {
-     return;
-   }
-   js = d.createElement(s);
-   js.id = id;
-   //        js.src = "//connect.facebook.net/en_US/sdk.js";  //Eng.ver
-   js.src = "//connect.facebook.net/ko_KR/all.js";
-   fjs.parentNode.insertBefore(js, fjs);
- }(document, 'script', 'facebook-jssdk'));
-
-function getFBdata() {
-  FB.api('/me', {fields: 'email, gender, name, age_range, link, locale, picture, timezone,verified'}, function(user) {
-      console.log(user);
-  });
-}
-function getUserPicture(user_id) {
-  FB.api(
-      "/" + user_id + "/picture?type=large&redirect=true",
-      function (response) {
-        if (response && !response.error) {
-          $('#profilepic').attr('src', response.data.url);
-          $.post("saveimages",
-          {
-            url: response.data.url,
-            fid: user_id
-          },
-          function (data, status) {
-            $('#profilepic').attr('src', data);
-          });
-        }
-      });
-}
+  }
+  function getUserPicture(user_id) {
+    FB.api(
+        "/" + user_id + "/picture?type=large&redirect=true",
+        function (response) {
+          if (response && !response.error) {
+            $('#profilepic').attr('src', response.data.url);
+            $.post("saveimages",
+            {
+              url: response.data.url,
+              fid: user_id
+            },
+            function (data, status) {
+              $('#profilepic').attr('src', data);
+            });
+          }
+        });
+  }
 </script>
 
 <style>
@@ -139,16 +139,18 @@ function getUserPicture(user_id) {
     text-align: center;
   }
   .l-container {
-    margin-left: 3%;
-    margin-right: 3%;
+    margin-left: 5%;
+    margin-right: 5%;
   }
   </style>
   <ul id="slide-out" class="side-nav">
-    <li><div class="userView">
-      <a href="#!user"><img class="responsive-img circle" src="{% static 'home/instructor-03.png' %}"></a>
-      <a href="#!name"><span class="name"><b>Ryan Koo</b></span></a>
-      <a href="#!email"><span class="email">info@headstartsv.com</span></a>
-    </div></li>
+    <li>
+      <div class="userView">
+        <a href="#!user"><img class="responsive-img circle" src="{% static 'home/instructor-03.png' %}"></a>
+        <a href="#!name"><span class="name"><b>Ryan Koo</b></span></a>
+        <a href="#!email"><span class="email">info@headstartsv.com</span></a>
+      </div>
+    </li>
     <li><a href="#!"><i class="material-icons">cloud</i>Profile</a></li>
     <li><div class="divider"></div></li>
     <li><a href="#" class="subheader">Menu</a></li>
@@ -192,7 +194,7 @@ function getUserPicture(user_id) {
           </div>
         </div>
         <div class="col s2" align="center" style="margin-top: -5%;">
-          <img src="{% static 'home/logo.png' %}" style="width: 50%; margin-top: 70px;"/>
+         <a href=#><img src="{% static 'home/logo.png' %}" style="width: 50%; margin-top: 70px;"/></a>
             <!--<a class="arrow" href=# style="font-weight: 200;">Headstart</a>-->
         </div>
         <div class="col s5 row menu-underline">
@@ -371,6 +373,35 @@ function getUserPicture(user_id) {
     </div>
   </div>
 
+  <div class="container">
+    <div class="center teal-text text-lighten-3" style="font-family: Raleway; margin-top: 60px;">
+      <h3>INTERESTED?</h3>
+      <p>If you're interested in any of our courses, please get in touch</p>
+      <div class="row">
+        <div class="col l4 offset-l2">
+          <input placeholder="NAME" id="name" type="text" class="validate">
+          <input placeholder="ORGANIZATION" id="organization" type="text" class="validate">
+          <input placeholder="EMAIL" id="email" type="email" class="validate">
+        </div>
+        <div class="col l4">
+          <div class="input-field">
+            <select>
+              <option value="" disabled selected>Choose your option</option>
+              <option value="1">Option 1</option>
+              <option value="2">Option 2</option>
+              <option value="3">Option 3</option>
+            </select>
+          </div>
+          <label>Materialize Select</label>
+          <textarea id="textarea1" class="materialize-textarea">
+          </textarea>
+          <label for="textarea1">Textarea</label>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
   <footer class="page-footer blue-grey darken-2">
     <div class="container" style="padding-top: 40px; padding-bottom: 40px;">
       <div class="row white-text center">
@@ -423,7 +454,7 @@ function getUserPicture(user_id) {
                  <fb:login-button scope="public_profile,email" onlogin="checkLoginState();" width="332px" height="36px">
                     <a class="waves-effect waves-light btn-flat white-text light-blue darken-2"
                                         style="width: 100%"><i class="fa fa-facebook-square" aria-hidden="true" style="margin-right: 10px;"></i>페이스북으로 로그인</a>
-                     </fb:login-button>
+                 </fb:login-button>
             </div>
 
             <div class="row">
@@ -431,15 +462,11 @@ function getUserPicture(user_id) {
                         style="width: 100%"><i class="fa fa-square" aria-hidden="true" style="margin-right: 10px;"></i>네이버로 로그인</a>
             </div>
         </div>
-
         <div class="modal-footer">
-            <a href="{% url 'home:register' %}" style="float: left; font-weight: 300;" class="align-right modal-action modal-close waves-effect waves-light btn-flat">Sign Up</a>
-        
-            <button type="submit"  value="Login" id="login-button">Login</button>
+            <a href="{% url 'home:register' %}" style="float: left; font-weight: 300;" class="align-right modal-action modal-close waves-effect waves-light btn-flat">Sign Up</a> 
+            <button class="btn-flat " type="submit" value="Login" id="login-button">Sign-in</button>
         </div>
-
         </form>
-
     </div>
 
 
