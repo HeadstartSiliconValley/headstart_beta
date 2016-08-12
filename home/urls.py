@@ -12,8 +12,4 @@ urlpatterns = [
     url(r'^register/$', views.register, name = 'register'),
     url(r'^accounts/login/$', 'django.contrib.auth.views.login', name = 'login'),
     url(r'^logout/$', views.logout_page , name='logout'),
-
-    #  url(r'^home/$', views.home),
-    #  url(r'^register/success/$', views.register_success , name = 'success'),
-    #url(r'^$', auth_views.login, {'home': 'home/index.html'}),
 ]
