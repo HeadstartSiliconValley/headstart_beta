@@ -14,6 +14,7 @@
   <link href="{% static 'home/css/style.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
 </head>
 <body>
+
 <!-- Facebook login script -->
     <script>
 	         // 로그인 상태 체크
@@ -90,88 +91,104 @@
     }
 </script>
 
-	<style>
-  @font-face {
-		font-family: Raleway;
-		src: url({% static 'home/fonts/Raleway-Medium.ttf' %});
-	}
-	@font-face{
-		font-family: NanumGothic;
-		src: url({% static 'home/fonts/NanumGothic.woff' %});
-	}
-	@font-face{
-		font-family: NanumGothic;
-		src: url({% static 'home/fonts/NanumGothicBold.woff' %});
-		font-weight: Bold;
-	}
-	body {
-		font-family: NanumGothic;
-	}
-	a.arrow {
-		color: rgba(255,255,255,1);
-		font-family: Raleway;
-	}
+<style>
 
-	a.arrow:hover {
-		color: rgba(255,255,255,1);
-	}
-	div#modal1 {
-		max-width: 400px;
-		min-height: 500px;
-		background-color: HSLA(0, 0%, 100%, 1);
-		text-align: center;
-		padding: 0 10px;
-	}
-	.parallax-container .section {
-		top: 0% !important;
-		position: relative !important;
-	}
-	#index-banner .section {
-		    top: 0% !important;
-	}
-	.menu-underline {
-		margin-bottom: 7px; 
-		border-bottom: solid; 
-		border-width: 1px; 
-		text-align: center;
-	}
-	.l-container {
-		margin-left: 10%;
-		margin-right: 10%;
-	}
-	</style>
+  @font-face {
+        font-family: Raleway;
+        src: url({% static 'home/fonts/Raleway-Medium.ttf' %});
+    }
+    @font-face{
+        font-family: NanumGothic;
+        src: url({% static 'home/fonts/NanumGothic.woff' %});
+    }
+    @font-face{
+        font-family: NanumGothic;
+        src: url({% static 'home/fonts/NanumGothicBold.woff' %});
+        font-weight: Bold;
+    }
+    body {
+        font-family: NanumGothic;
+    }
+    a.arrow {
+        color: rgba(255,255,255,1);
+        font-family: Raleway;
+    }
+
+    a.arrow:hover {
+        color: rgba(255,255,255,1);
+    }
+    div#modal1 {
+        max-width: 400px;
+        min-height: 500px;
+        background-color: HSLA(0, 0%, 100%, 1);
+        text-align: center;
+        padding: 0 10px;
+    }
+    .parallax-container .section {
+        top: 0% !important;
+        position: relative !important;
+    }
+    #index-banner .section {
+            top: 0% !important;
+    }
+    .menu-underline {
+        margin-bottom: 7px; 
+        border-bottom: solid; 
+        border-width: 1px; 
+        text-align: center;
+    }
+    .l-container {
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+    </style>
+
   <div id="index-banner" class="parallax-container" style="height: 800px; background-color: rgba(57,174,166,0.5);">
     <div class="section no-pad-bot">
-			<div class="row l-container" style="margin-top: 50px;">
+            <div class="row l-container" style="margin-top: 50px;">
           <div class="col s5 row menu-underline">
             <div class="col s3">
-							<p><a class="arrow" href=# style="font-weight: 200;">Bootcamp</a></p>
+                            <p><a class="arrow" href=# style="font-weight: 200;">Bootcamp</a></p>
             </div>
             <div class="col s3">
-							<p><a class="arrow" href=# style="font-weight: 200;">Courses</a></p>
+                            <p><a class="arrow" href=# style="font-weight: 200;">Courses</a></p>
             </div>
             <div class="col s3">
-							<p><a class="arrow" href=# style="font-weight: 200;">Events</a></p>
+                            <p><a class="arrow" href=# style="font-weight: 200;">Events</a></p>
             </div>
             <div class="col s3">
-							<p><a class="arrow" href=# style="font-weight: 200;">Alumni</a></p>
-			</div>
-	</div>
-	<div class="col s2" align="center" style="margin-top: -5%;">
-		<img src="{% static 'home/logo.png' %}" style="width: 50%; margin-top: 70px;"/>
-						<!--<a class="arrow" href=# style="font-weight: 200;">Headstart</a>-->
-	</div>
-	<div class="col s5 row menu-underline">
-    <div class="col s3">
-		<p><a class="arrow" href=# style="font-weight: 200;">Team</a></p>
-    </div>
-						<div class="col s3">
-							<p><a class="arrow" href=# style="font-weight: 200;">Content</a></p>
-						</div>
-						<div class='col s3 offset-s3' style='text-align: right; margin-top: 12px;'>
-							<a href='#modal1' id="login_text" class='waves-effect waves btn white modal-trigger' style='border-radius: 50px; color: rgba(0,0,0,0.5); width: 120px; text-transform: initial;'></a>
-						</div>
-      		</div>
+
+
+
+                            <p><a class="arrow" href=# style="font-weight: 200;">Alumni</a></p>
+                        </div>
+                    </div>
+                    <div class="col s2" align="center" style="margin-top: -5%;">
+                        <img src="{% static 'home/logo.png' %}" style="width: 50%; margin-top: 70px;"/>
+                        <!--<a class="arrow" href=# style="font-weight: 200;">Headstart</a>-->
+                    </div>
+        <div class="col s5 row menu-underline">
+            <div class="col s3">
+                            <p><a class="arrow" href=# style="font-weight: 200;">Team</a></p>
+            </div>
+                        <div class="col s3">
+                            <p><a class="arrow" href=# style="font-weight: 200;">Content</a></p>
+                        </div>
+        
+                        {% if user.is_authenticated %}
+                            <div class="col s3 offset-s3" style="text-align: right; margin-top: 12px;">
+                                <a href="/home/logout" class="" style="border-radius: 50px; color: rgba(0,0,0,0.5); width: 120px; text-transform: initial;">Log-out</a>
+                            </div>
+                        {%else %}
+                            <div class="col s3 offset-s3" style="text-align: right; margin-top: 12px;">
+                                <a href="#modal1" class="waves-effect waves btn white modal-trigger" style="border-radius: 50px; color: rgba(0,0,0,0.5); width: 120px; text-transform: initial;">Log-in</a>
+                            </div>
+                        {%endif%}
+
+        </div>
+
+
+
         </div>
     </div>
     <div class="section no-pad-bot">
@@ -180,11 +197,11 @@
           <a class="arrow" href=#><i class="fa fa-3x fa-chevron-left" aria-hidden="true"></i></a>
         </div>
         <div class="col s10 valign center-align">
-					<img src="{% static 'home/logo2.png' %}" style="width: 315px;"/>
-					<div style="max-width:620px; margin: auto; font-family: NanumGothic;">
-						<h2><b>당신의 미래를 바꿉니다.</b></h2>
-						<h5 style="line-height:150%; font-weight: normal;">Headstart는 Data Science에 관한 당신의 커리어 성장을 도울 최적의 프로그램을 제공합니다. 지금, 미래를 바꾸세요.</h5>
-					</div>
+                    <img src="{% static 'home/logo2.png' %}" style="width: 315px;"/>
+                    <div style="max-width:620px; margin: auto; font-family: NanumGothic;">
+                        <h2><b>당신의 미래를 바꿉니다.</b></h2>
+                        <h5 style="line-height:150%; font-weight: normal;">Headstart는 Data Science에 관한 당신의 커리어 성장을 도울 최적의 프로그램을 제공합니다. 지금, 미래를 바꾸세요.</h5>
+                    </div>
         </div>
         <div class="col s1 valign center-align">
           <a class="arrow" href=#><i class="fa fa-3x fa-chevron-right" aria-hidden="true"></i></a>
@@ -192,14 +209,14 @@
       </div>
     </div>
     <div class="parallax">
-			<!--<img src="{% static 'home/background.jpg' %}" alt="Unsplashed background img 1">-->
-			<video playsinline autoplay muted loop poster="{% static 'home/video.png' %}" style="min-width: 100%; min-height: 100%;">
-				<source src="https://s3.ap-northeast-2.amazonaws.com/headstart-web/Video+(Clean).mp4" type="video/mp4">
-			</video>
-		</div>
+            <!--<img src="{% static 'home/background.jpg' %}" alt="Unsplashed background img 1">-->
+            <video playsinline autoplay muted loop poster="{% static 'home/video.png' %}" style="min-width: 100%; min-height: 100%;">
+                <source src="https://s3.ap-northeast-2.amazonaws.com/headstart-web/Video+(Clean).mp4" type="video/mp4">
+            </video>
+        </div>
   </div>
   <div class="blue-grey darken-3 white-text z-depth-2" style="padding-top: 20px; padding-bottom: 30px;">
-		<div class="section center">
+        <div class="section center">
         <h3>헤드스타트는 한국 <b>데이터사이언스</b> 교육의 <b>기준</b>입니다.</h3>
         <h5>Headstart is the standard of Data science in Korea.</h5>
     </div>
@@ -208,36 +225,36 @@
   <div class="container">
     <div class="section">
       <!--   Icon Section   -->
-			<div class="row center" style="margin-top: 100px; color: rgba(31,85,95,1);">
-					<h2>당신만을 위한 <b>커리큘럼</b>을 제공합니다.</h3>
-			</div>
+            <div class="row center" style="margin-top: 100px; color: rgba(31,85,95,1);">
+                    <h2>당신만을 위한 <b>커리큘럼</b>을 제공합니다.</h3>
+            </div>
       <div class="row">
         <div class="col s12 m4">
           <div class="icon-block">
-						<img src="{% static 'home/info1.png' %}" style="width:100%;" />
+                        <img src="{% static 'home/info1.png' %}" style="width:100%;" />
             <h3 class="center teal-text text-lighten-3">학생</h3>
             <p class="light">
-						Headstart는 미국IT 기업의 업무진행방식을 직접 경험할 수 있는 Project를 통한 실습 및	인턴쉽을 제공하며 현장실습교과목을 통한	학점인정이 가능합니다. Headstart는 실제 업무에 사용되는 프로그래밍 역량을 강화하고 취업에 필요한 데이터 포트폴리오를 완성하여	취업까지 이어질 수 있도록 지원해 드립니다.
-						</p>
+                        Headstart는 미국IT 기업의 업무진행방식을 직접 경험할 수 있는 Project를 통한 실습 및    인턴쉽을 제공하며 현장실습교과목을 통한   학점인정이 가능합니다. Headstart는 실제 업무에 사용되는 프로그래밍 역량을 강화하고 취업에 필요한 데이터 포트폴리오를 완성하여  취업까지 이어질 수 있도록 지원해 드립니다.
+                        </p>
           </div>
         </div>
 
         <div class="col s12 m4">
           <div class="icon-block">
-						<img src="{% static 'home/info2.png' %}" style="width:100%;" />
+                        <img src="{% static 'home/info2.png' %}" style="width:100%;" />
             <h3 class="center teal-text text-lighten-3">일반인</h3>
             <p class="light">
-						현업에서 업무역량을 키우고 싶으신 분, 데이터분석가로 커리어 전환하고 싶으신 분, 효율적인 데이터 분석과 실무적용을 위해 Data Science에 대한 Project를 진행합니다. Data Scientist로의 지름길을 찾아 가는데 Headstart 가 함께하겠습니다.
-						</p>
+                        현업에서 업무역량을 키우고 싶으신 분, 데이터분석가로 커리어 전환하고 싶으신 분, 효율적인 데이터 분석과 실무적용을 위해 Data Science에 대한 Project를 진행합니다. Data Scientist로의 지름길을 찾아 가는데 Headstart 가 함께하겠습니다.
+                        </p>
           </div>
         </div>
 
         <div class="col s12 m4">
           <div class="icon-block">
-						<img src="{% static 'home/info3.png' %}" style="width:100%;" />
+                        <img src="{% static 'home/info3.png' %}" style="width:100%;" />
             <h3 class="center teal-text text-lighten-3">기업</h3>
             <p class="light">
-						Headstart는 실제 미국 IT기업이 데이터를 분석하는 방법과 데이터 활용사례를 기반으로 차별화된 Data Science 관련 사내 교육을 진행합니다. 무수한 데이터 속 올바른 결정을 내리기 힘든 경우, HEADSTART와의 아웃소싱을 통해 최상의 결과를 만들어보십시오.</p>	
+                        Headstart는 실제 미국 IT기업이 데이터를 분석하는 방법과 데이터 활용사례를 기반으로 차별화된 Data Science 관련 사내 교육을 진행합니다. 무수한 데이터 속 올바른 결정을 내리기 힘든 경우, HEADSTART와의 아웃소싱을 통해 최상의 결과를 만들어보십시오.</p>   
           </div>
         </div>
       </div>
@@ -245,7 +262,7 @@
   </div>
 
   <div>
-		<img src="{% static 'home/howitworks.png' %}" style="width: 100%;" />
+        <img src="{% static 'home/howitworks.png' %}" style="width: 100%;" />
   </div>
 
 
@@ -303,9 +320,11 @@
 				-	현직 전문가와의 질의 응답</p>
 				<a class="waves-effect waves-light btn teal lighten-3 white-text" >MORE</a>
 
-			</div>
-		</div>
-	</div>
+            </div>
+        </div>
+    </div>
+
+
 
 	<style>
 		.instr {
@@ -324,82 +343,95 @@
 		</div>
 	</div>
 
-	<footer class="page-footer grey darken-2">
+    <footer class="page-footer grey darken-2">
     <div class="container" style="padding-top: 40px; padding-bottom: 40px;">
       <div class="row white-text center">
+
 				Headstart Silicon Valley | Address : 3350 Thomas rd, Santa Clara 95054  | E-mail : Info@headstartsv.com<br>
 				대표이사 : Ryan Koo | 개인정보관리 책임자 : 서규원 | 고객 센터 TEL : 408 707 0660<br><br>
 				Headstart Silicon Valley, Inc, © 2015
 			</div>	
+
     </div>
     <div class="footer-copyright teal lighten-3" style="height: 60px;">
       <div class="container">
       Made by <a class="white-text text-lighten-3" href="http://materializecss.com">Materialize</a>
       </div>
     </div>
-	</footer>
+    </footer>
 
-	<!-- Modals -->
-	<style>
-	div.modal-header {
-		padding-top: 40px;
-		font-family: Raleway;
-	}	
-	</style>
 
-	<div id="modal1" class="modal">
-		<div class="modal-header">
-			<h4>Login</h4>
-		</div>
-		<div class="modal-content">
-			<div class="row">
-				<div class="input-field col s12">
-					<input id="email" type="email" class="left-align validate" placeholder="example@email.com">
-					<label for="email" class="left-align">Email</label>
-				</div>
-			</div>
-			<div class="row">
-				<div class="input-field col s12">
-					<input class="left-align validate" id="password" type="password" placeholder="password">
-					<label class="left-align" for="password">Password</label>
-				</div>
-			</div>
-			<div class="row">
-				 <fb:login-button scope="public_profile,email" onlogin="checkLoginState();" width="332px" height="36px">
-					<a class="waves-effect waves-light btn-flat white-text light-blue darken-2"
+
+    <!-- Modals -->
+    <style>
+    div.modal-header {
+        padding-top: 40px;
+        font-family: Raleway;
+    }   
+    </style>
+
+    <div id="modal1" class="modal">
+
+        <div class="modal-header">
+            <h4>Login</h4>
+        </div>
+
+        <div class="modal-content">
+            <form class="form" method="post" action="." >{% csrf_token %}
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input type="text" class="left-align validate" placeholder="Username" name="username">
+                        <label for="username" class="left-align">Username</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input class="left-align validate" type="password" placeholder="Password" name="password">
+                        <label class="left-align" for="password">Password</label>
+                    </div>
+                </div>
+            
+           <div class="row">
+                 <fb:login-button scope="public_profile,email" onlogin="checkLoginState();" width="332px" height="36px">
+                    <a class="waves-effect waves-light btn-flat white-text light-blue darken-2"
                                         style="width: 100%"><i class="fa fa-facebook-square" aria-hidden="true" style="margin-right: 10px;"></i>페이스북으로 로그인</a>
-			         </fb:login-button>
-			</div>
+                     </fb:login-button>
+            </div>
 
+            <div class="row">
+                  <a class="waves-effect waves-light btn-flat white-text green"
+                        style="width: 100%"><i class="fa fa-square" aria-hidden="true" style="margin-right: 10px;"></i>네이버로 로그인</a>
+            </div>
+        </div>
 
+        <div class="modal-footer">
+            <a href="{% url 'home:register' %}" style="float: left; font-weight: 300;" class="align-right modal-action modal-close waves-effect waves-light btn-flat">Sign Up</a>
+        
+            <button type="submit"  value="Login" id="login-button">Login</button>
+        </div>
 
-			<div class="row">
-				  <a class="waves-effect waves-light btn-flat white-text green"
-						style="width: 100%"><i class="fa fa-square" aria-hidden="true" style="margin-right: 10px;"></i>네이버로 로그인</a>
-			</div>
-		</div>
-		<div class="modal-footer">
-			<a href="#!" style="float: left; font-weight: 300;" class="align-right modal-action modal-close waves-effect waves-light btn-flat">Sign Up</a>
-			<a href="#!" style="font-weight: 300;" class=" modal-action modal-close waves-effect waves-light btn-flat">Sign In</a>
-		</div>
-	</div>
+        </form>
+
+    </div>
+
 
   <!--  Scripts-->
-	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="{% static 'home/js/materialize.js' %}"></script>
   <script src="{% static 'home/js/init.js' %}"></script>
 
-	<script>
-	$(document).ready(function(){
-			// the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
-		$('.modal-trigger').leanModal({
-				in_duration: 150, // Transition in duration
-				out_duration: 100, // Transition out duration
-			});
-		$('#modal1').openModal();
-		$('#modal1').closeModal();
-	});
-	</script>
+    <script>
+    $(document).ready(function(){
+            // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+        $('.modal-trigger').leanModal({
+                in_duration: 150, // Transition in duration
+                out_duration: 100, // Transition out duration
+            });
+        $('#modal1').openModal();
+        $('#modal1').closeModal();
+    });
+    </script>
 
   </body>
 </html>
+
