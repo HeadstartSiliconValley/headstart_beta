@@ -1,6 +1,9 @@
 from django.conf.urls import url
 from django.contrib.auth.views import login
 
+from django.conf.urls.static import static
+from django.conf import settings
+
 from . import views
 
 
@@ -12,8 +15,5 @@ urlpatterns = [
     url(r'^register/$', views.register, name = 'register'),
     url(r'^accounts/login/$', 'django.contrib.auth.views.login', name = 'login'),
     url(r'^logout/$', views.logout_page , name='logout'),
-
-    #  url(r'^home/$', views.home),
-    #  url(r'^register/success/$', views.register_success , name = 'success'),
-    #url(r'^$', auth_views.login, {'home': 'home/index.html'}),
-]
+    url(r'^personal/$', views.personal , name='personal'),
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

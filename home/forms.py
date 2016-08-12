@@ -41,6 +41,8 @@ class RegistrationForm(forms.Form):
         label=_("grade")
         )
 
+    image = forms.ImageField()
+    
 
     def clean_username(self):
         try:

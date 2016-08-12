@@ -205,6 +205,10 @@ function getUserPicture(user_id) {
           <div class="col s3 offset-s3" style="text-align: right; margin-top: 12px;">
             {% if user.is_authenticated %}
             <a href="/home/logout" class="waves-effect waves btn white modal-trigger" style="border-radius: 50px; color: rgba(0,0,0,0.5); width: 120px; text-transform: initial;">Log-out</a>
+
+            <b><a href="/home/personal">Me</a></b>
+
+
             {%else %}
             <a href="#modal1" class="waves-effect waves btn white modal-trigger" style="border-radius: 50px; color: rgba(0,0,0,0.5); width: 120px; text-transform: initial;">Log-in</a>
             {%endif%}
