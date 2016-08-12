@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'post',
+    'accounts',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -128,11 +129,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
-MEDIA_URL = '/pic_folder/'
-MEDIA_ROOT = '/headstart_beta/pic_folder/'
 
 STATIC_URL = '/static/'
-STATIC_ROOT = 'headstart_beta/home/static/home'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 
 STATICFILES_DIRS = (

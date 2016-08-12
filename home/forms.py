@@ -41,9 +41,6 @@ class RegistrationForm(forms.Form):
         label=_("grade")
         )
 
-    image = forms.ImageField()
-    
-
     def clean_username(self):
         try:
             user = User.objects.get(username__iexact=self.cleaned_data['username'])
