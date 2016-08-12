@@ -12,7 +12,8 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 
 import os
 import django.contrib.auth
-django.contrib.auth.LOGIN_URL = '/'
+django.contrib.auth.LOGIN_URL = '/home'
+LOGIN_REDIRECT_URL = '/home'
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -59,7 +60,7 @@ ROOT_URLCONF = 'headstart.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
