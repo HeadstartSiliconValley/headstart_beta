@@ -55,3 +55,103 @@ p {
 footer.page-footer {
   margin: 0;
 }
+
+
+#team-grid .gridder-list {
+	width: 20%
+}
+#team-grid .gridder-list {
+	width: 20%
+}
+
+#team-grid .gridder-list:nth-child(n) {
+	margin-bottom: 0;
+	margin-right: 0
+}
+
+#team-grid .gridder-list:nth-of-type(5n) {
+	margin-right: 0;
+	margin-bottom: 0
+}
+
+@media screen and (max-width: 39.9375em) {
+	#team-grid .gridder-list {
+		width: 100%
+	}
+	#team-grid .gridder-list:nth-child(n) {
+		margin-bottom: 0;
+		margin-right: 0
+	}
+	#team-grid .gridder-list:nth-of-type(1n) {
+		margin-right: 0;
+		margin-bottom: 0
+	}
+}
+
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {
+	#team-grid .gridder-list {
+		width: 33.33333%
+	}
+	#team-grid .gridder-list:nth-child(n) {
+		margin-bottom: 0;
+		margin-right: 0
+	}
+	#team-grid .gridder-list:nth-of-type(3n) {
+		margin-right: 0;
+		margin-bottom: 0
+	}
+}
+
+#team-grid .gridder-expanded-content {
+	padding: 4em 0
+}
+
+#team-grid .gridder-expanded-content h3 {
+	font-weight: 800;
+	text-transform: uppercase;
+	line-height: 1.1;
+	margin-bottom: 16px
+}
+
+#team-grid .gridder-expanded-content h5, #team-grid .gridder-expanded-content h6
+	{
+	font-weight: 600;
+	font-family: "Calluna-Regular"
+}
+
+#team-grid .gridder-expanded-content i {
+	color: #DB385F;
+	margin-right: 1em
+}
+
+#team-grid .gridder-navigation {
+	float: right
+}
+
+#team-grid .gridder-navigation .gridder-nav {
+	display: none
+}
+
+#team-grid .gridder-navigation a.gridder-close {
+	padding: 1em;
+	font-weight: 800;
+	font-size: 1.5em;
+	margin-right: 27%
+}
+
+#team-grid .img-responsive {
+	-webkit-filter: grayscale(100%);
+	filter: grayscale(100%)
+}
+
+#team-grid .img-responsive:hover, #team-grid .img-responsive:active {
+	-webkit-filter: none;
+	filter: none
+}
+
+#team-grid .selectedItem img {
+	-webkit-filter: none;
+	filter: none;
+	border-bottom: 8px solid #399FD9
+}
+

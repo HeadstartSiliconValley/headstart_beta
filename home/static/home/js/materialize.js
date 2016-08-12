@@ -7466,3 +7466,48 @@ Picker.extend( 'pickadate', DatePicker )
       }
     }; // Plugin end
 }( jQuery ));
+
+function Output(v) {
+        var target = document.getElementById("output");
+        var html = "";
+        
+	if(v == "THE TEAM") {
+
+	        html += "<div class='wrapper style1' style='background: black;'>";
+	        html += "<section id='features' class='container special'>";
+	        html += "<header><br /><h2 style='font-size: 50px;'>THE TEAM</h2><br /></header>";
+	        html += "<div class='box morphing-glowing'>";         
+	        html += "<div id='team-grid'>";
+	        html += "<ul class='gridder'>";
+	        html += "<li class='gridder-list' data-griddercontent=''#gridder-content-1'>";
+	        html += "<span class='image-wrap img-responsive' style='position: relative; display: inline-block; background: url(http://headstartsv.com/static/home/images/profile03.jpg) no-repeat center center; width: 158px; height: 158px;'></li>";
+	        html += "<li class='gridder-list' data-griddercontent=''#gridder-content-2'>";
+	        html += "<span class='image-wrap img-responsive' style='position: relative; display: inline-block; background: url(http://headstartsv.com/static/home/images/profile02.jpg) no-repeat center center; width: 158px; height: 158px;'></li>";
+                html += "<li class='gridder-list' data-griddercontent=''#gridder-content-2'>";
+                html += "<span class='image-wrap img-responsive' style='position: relative; display: inline-block; background: url(http://headstartsv.com/static/home/images/test.png) no-repeat center center; width: 158px; height: 158px;'></li>";
+                html += "<li class='gridder-list' data-griddercontent=''#gridder-content-2'>";
+                html += "<span class='image-wrap img-responsive' style='position: relative; display: inline-block; background: url(http://headstartsv.com/static/home/images/test.png) no-repeat center center; width: 158px; height: 158px;'></li>";
+                html += "<li class='gridder-list' data-griddercontent=''#gridder-content-2'>";
+                html += "<span class='image-wrap img-responsive' style='position: relative; display: inline-block; background: url(http://headstartsv.com/static/home/images/test.png) no-repeat center center; width: 158px; height: 158px;'></li>";
+	        html += "</ul></div></div></section></div>";
+       }else {
+        html += "<div class='wrapper style1' style='background: black;'>";
+        html += "<section id='features' class='container special'>";
+        html += "<header><br /><h2 style='font-size: 50px;'>INSTRUCTORS</h2><br /></header>";
+        html += "<div class='box morphing-glowing'>";
+        html += "<div id='team-grid'>";
+        html += "<ul class='gridder'>";
+        html += "<li class='gridder-list' data-griddercontent=''#gridder-content-1'>";
+        html += "<span class='image-wrap img-responsive' style='position: relative; display: inline-block; background: url(http://headstartsv.com/static/home/images/profile01.jpg) no-repeat center center; width: 158px; height: 158px;'></li>";
+        html += "<li class='gridder-list' data-griddercontent=''#gridder-content-1'>";
+        html += "<span class='image-wrap img-responsive' style='position: relative; display: inline-block; background: url(http://headstartsv.com/static/home/images/test.png) no-repeat center center; width: 158px; height: 158px;'></li>";
+        html += "<li class='gridder-list' data-griddercontent=''#gridder-content-1'>";
+        html += "<span class='image-wrap img-responsive' style='position: relative; display: inline-block; background: url(http://headstartsv.com/static/home/images/test.png) no-repeat center center; width: 158px; height: 158px;'></li>";
+        html += "<li class='gridder-list' data-griddercontent=''#gridder-content-1'>";
+        html += "<span class='image-wrap img-responsive' style='position: relative; display: inline-block; background: url(http://headstartsv.com/static/home/images/test.png) no-repeat center center; width: 158px; height: 158px;'></li>";
+        html += "<li class='gridder-list' data-griddercontent=''#gridder-content-1'>";
+        html += "<span class='image-wrap img-responsive' style='position: relative; display: inline-block; background: url(http://headstartsv.com/static/home/images/test.png) no-repeat center center; width: 158px; height: 158px;'></li>";
+        html += "</ul></div></div></section></div>";
+}
+        target.innerHTML = html;
+}
