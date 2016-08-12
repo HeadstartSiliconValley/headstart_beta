@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
   <title>Headstart Silicon Valley</title>
   <link rel="shortcut icon" type="image/x-icon"
-	href="http://headstartsv.com/static/home/favicon.ico">
+  href="http://headstartsv.com/static/home/favicon.ico">
   <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   {% load staticfiles %}
@@ -19,245 +19,245 @@
 <script>
 // 로그인 상태 체크
 function statusChangeCallback(response) { //접속 상태 리턴
-	//로그인 상태에 따라서 출력
-	if (response.status === 'connected') {	//이미 연결된 상태라면?
-		//       console.info(response.authResponse);
-		//alert("Your UID is " + response.authResponse.userID);
-		getFBdata();
-		// getUserPicture(response.authResponse.userID)
+  //로그인 상태에 따라서 출력
+  if (response.status === 'connected') {  //이미 연결된 상태라면?
+    //       console.info(response.authResponse);
+    //alert("Your UID is " + response.authResponse.userID);
+    getFBdata();
+    // getUserPicture(response.authResponse.userID)
 
-		$('#login_text').text('Log-out').attr('href', '#');
-	} else {
-		$('#login_text').text('Log-in').attr('href', '#modal1');
-	}
+    $('#login_text').text('Log-out').attr('href', '#');
+  } else {
+    $('#login_text').text('Log-in').attr('href', '#modal1');
+  }
 }
 
 //onlogin 핸들러
 function checkLoginState() {
-	FB.getLoginStatus(function(response) {
-			statusChangeCallback(response);
-			});
+  FB.getLoginStatus(function(response) {
+      statusChangeCallback(response);
+      });
 }
 
 
 window.fbAsyncInit = function () {
-	FB.init({
-		appId: '1622604911363810', // 페이스북 앱 ID
-		status: true, // 로그인 상태
-		cookie: true, // 쿠키 허가
-		xfbml: true, // xfbml 또는 html5
-		version: 'v2.7', // 앱 버전
+  FB.init({
+    appId: '1622604911363810', // 페이스북 앱 ID
+    status: true, // 로그인 상태
+    cookie: true, // 쿠키 허가
+    xfbml: true, // xfbml 또는 html5
+    version: 'v2.7', // 앱 버전
 });
 FB.getLoginStatus(function(response) {
-		statusChangeCallback(response);
-		});
+    statusChangeCallback(response);
+    });
 };
 
 // 비동기적으로 SDK 로딩
 (function (d, s, id) {
-	 var js, fjs = d.getElementsByTagName(s)[0];
-		 if (d.getElementById(id)) {
-		 return;
-	 }
-	 js = d.createElement(s);
-	 js.id = id;
-	 //        js.src = "//connect.facebook.net/en_US/sdk.js";	//Eng.ver
-	 js.src = "//connect.facebook.net/ko_KR/all.js";
-	 fjs.parentNode.insertBefore(js, fjs);
+   var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {
+     return;
+   }
+   js = d.createElement(s);
+   js.id = id;
+   //        js.src = "//connect.facebook.net/en_US/sdk.js";  //Eng.ver
+   js.src = "//connect.facebook.net/ko_KR/all.js";
+   fjs.parentNode.insertBefore(js, fjs);
  }(document, 'script', 'facebook-jssdk'));
 
 function getFBdata() {
-	FB.api('/me', {fields: 'email, gender, name, age_range, link, locale, picture, timezone,verified'}, function(user) {
-			console.log(user);
-	});
+  FB.api('/me', {fields: 'email, gender, name, age_range, link, locale, picture, timezone,verified'}, function(user) {
+      console.log(user);
+  });
 }
 function getUserPicture(user_id) {
-	FB.api(
-			"/" + user_id + "/picture?type=large&redirect=true",
-			function (response) {
-				if (response && !response.error) {
-					$('#profilepic').attr('src', response.data.url);
-					$.post("saveimages",
-					{
-						url: response.data.url,
-						fid: user_id
-					},
-					function (data, status) {
-						$('#profilepic').attr('src', data);
-					});
-				}
-			});
+  FB.api(
+      "/" + user_id + "/picture?type=large&redirect=true",
+      function (response) {
+        if (response && !response.error) {
+          $('#profilepic').attr('src', response.data.url);
+          $.post("saveimages",
+          {
+            url: response.data.url,
+            fid: user_id
+          },
+          function (data, status) {
+            $('#profilepic').attr('src', data);
+          });
+        }
+      });
 }
 </script>
 
 <style>
 
   @font-face {
-		font-family: Raleway;
-		src: url({% static 'home/fonts/Raleway-Medium.ttf' %});
-	}
-	@font-face{
-		font-family: NanumGothic;
-		src: url({% static 'home/fonts/NanumGothic.woff' %});
-	}
-	@font-face{
-		font-family: NanumGothic;
-		src: url({% static 'home/fonts/NanumGothicBold.woff' %});
-		font-weight: Bold;
-	}
-	body {
-		font-family: NanumGothic;
-		word-break: keep-all;
-	}
+    font-family: Raleway;
+    src: url({% static 'home/fonts/Raleway-Medium.ttf' %});
+  }
+  @font-face{
+    font-family: NanumGothic;
+    src: url({% static 'home/fonts/NanumGothic.woff' %});
+  }
+  @font-face{
+    font-family: NanumGothic;
+    src: url({% static 'home/fonts/NanumGothicBold.woff' %});
+    font-weight: Bold;
+  }
+  body {
+    font-family: NanumGothic;
+    word-break: keep-all;
+  }
 
-	a.arrow {
-		color: rgba(255,255,255,1);
-		font-family: Raleway;
-	}
+  a.arrow {
+    color: rgba(255,255,255,1);
+    font-family: Raleway;
+  }
 
-	a.arrow:hover {
-		color: rgba(255,255,255,1);
-	}
-	div#modal1 {
-		max-width: 400px;
-		min-height: 500px;
-		background-color: HSLA(0, 0%, 100%, 1);
-		text-align: center;
-		padding: 0 10px;
-	}
-	.parallax-container .section {
-		top: 0% !important;
-		position: relative !important;
-	}
-	#index-banner .section {
-		    top: 0% !important;
-	}
-	.menu-underline {
-		margin-bottom: 7px; 
-		border-bottom: solid; 
-		border-width: 1px; 
-		text-align: center;
-	}
-	.l-container {
-		margin-left: 3%;
-		margin-right: 3%;
-	}
-	</style>
-	<ul id="slide-out" class="side-nav">
-		<li><div class="userView">
-			<a href="#!user"><img class="responsive-img circle" src="{% static 'home/instructor-03.png' %}"></a>
-			<a href="#!name"><span class="name"><b>Ryan Koo</b></span></a>
-			<a href="#!email"><span class="email">info@headstartsv.com</span></a>
-		</div></li>
-		<li><a href="#!"><i class="material-icons">cloud</i>Profile</a></li>
-		<li><div class="divider"></div></li>
-		<li><a href="#" class="subheader">Menu</a></li>
-		<li><a class="waves-effect" href="#!">Bootcamp</a></li>
-		<li><a class="waves-effect" href="#!">Courses</a></li>
-		<li><a class="waves-effect" href="#!">Events</a></li>
-		<li><a class="waves-effect" href="#!">Alumini</a></li>
-		<li><a class="waves-effect" href="#!">Team</a></li>
-		<li><a class="waves-effect" href="#!">Contact</a></li>
-	</ul>
+  a.arrow:hover {
+    color: rgba(255,255,255,1);
+  }
+  div#modal1 {
+    max-width: 400px;
+    min-height: 500px;
+    background-color: HSLA(0, 0%, 100%, 1);
+    text-align: center;
+    padding: 0 10px;
+  }
+  .parallax-container .section {
+    top: 0% !important;
+    position: relative !important;
+  }
+  #index-banner .section {
+        top: 0% !important;
+  }
+  .menu-underline {
+    margin-bottom: 7px; 
+    border-bottom: solid; 
+    border-width: 1px; 
+    text-align: center;
+  }
+  .l-container {
+    margin-left: 3%;
+    margin-right: 3%;
+  }
+  </style>
+  <ul id="slide-out" class="side-nav">
+    <li><div class="userView">
+      <a href="#!user"><img class="responsive-img circle" src="{% static 'home/instructor-03.png' %}"></a>
+      <a href="#!name"><span class="name"><b>Ryan Koo</b></span></a>
+      <a href="#!email"><span class="email">info@headstartsv.com</span></a>
+    </div></li>
+    <li><a href="#!"><i class="material-icons">cloud</i>Profile</a></li>
+    <li><div class="divider"></div></li>
+    <li><a href="#" class="subheader">Menu</a></li>
+    <li><a class="waves-effect" href="#!">Bootcamp</a></li>
+    <li><a class="waves-effect" href="#!">Courses</a></li>
+    <li><a class="waves-effect" href="#!">Events</a></li>
+    <li><a class="waves-effect" href="#!">Alumini</a></li>
+    <li><a class="waves-effect" href="#!">Team</a></li>
+    <li><a class="waves-effect" href="#!">Contact</a></li>
+  </ul>
 
-	<div class="navbar-fixed hide-on-large-only" style="position: absolute;">
-		<nav class="z-depth-0" style="background-color: transparent;">
-			<div class="nav-wrapper blue-grey darken-3 " style="background-color: rgba(55,71,79,0.7) !important;">
-				<a href="#!" class="brand-logo"><img src="{% static 'home/logo.png' %}" style="width: 50px; margin-top: 8px;"/></a>
-				<ul class="left">
-					<li><a href="#" class="button-collapse" data-activates="slide-out" style="color: white;"> <i class="small material-icons">view_headline</i></a>	</li>
-				</ul>
-				<ul class="right">
-					<li><a class="modal-trigger" href="#modal1" style="color: white;"><i class="small material-icons">perm_identity</i></a></li>
-				</ul>
-			</div>
-		</nav>
-	</div>
-
-	<div id="index-banner" class="parallax-container" style="height: 700px; background-color: rgba(57,174,166,0.5);">
-		<div class="section no-pad-bot hide-on-med-and-down">
-			<div class="row l-container" style="margin-top: 30px;">
-				<div class="col s5 row menu-underline">
-					<div class="col s3">
-						<p><a class="arrow" href=# style="font-weight: 200;">Bootcamp</a></p>
-					</div>
-					<div class="col s3">
-						<p><a class="arrow" href=# style="font-weight: 200;">Courses</a></p>
-					</div>
-					<div class="col s3">
-						<p><a class="arrow" href=# style="font-weight: 200;">Events</a></p>
-					</div>
-					<div class="col s3">
-						<p><a class="arrow" href=# style="font-weight: 200;">Alumni</a></p>
-					</div>
-				</div>
-				<div class="col s2" align="center" style="margin-top: -5%;">
-					<img src="{% static 'home/logo.png' %}" style="width: 50%; margin-top: 70px;"/>
-						<!--<a class="arrow" href=# style="font-weight: 200;">Headstart</a>-->
-				</div>
-				<div class="col s5 row menu-underline">
-					<div class="col s3">
-						<p><a class="arrow" href=# style="font-weight: 200;">Team</a></p>
-					</div>
-					<div class="col s3">
-						<p><a class="arrow" href=# style="font-weight: 200;">Contacts</a></p>
-					</div>
-					<div class="col s3 offset-s3" style="text-align: right; margin-top: 12px;">
-						{% if user.is_authenticated %}
-						<a href="/home/logout" class="waves-effect waves btn white modal-trigger" style="border-radius: 50px; color: rgba(0,0,0,0.5); width: 120px; text-transform: initial;">Log-out</a>
-						{%else %}
-						<a href="#modal1" class="waves-effect waves btn white modal-trigger" style="border-radius: 50px; color: rgba(0,0,0,0.5); width: 120px; text-transform: initial;">Log-in</a>
-						{%endif%}
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<div class="section hide-on-large-only" style="height: 15%;">
-		</div>
-		<div class="section no-pad-bot">
-			<div class="l-container row valign-wrapper" style="height: 550px;">
-				<div class="col hide-on-small-only l1 valign center-align">
-					<a class="arrow" href=#><i class="fa fa-3x fa-chevron-left" aria-hidden="true"></i></a>
-				</div>
-
-				<div class="col s12 l10 valign center-align">
-					<img src="{% static 'home/logo2.png' %}" style="max-width: 315px; width: 100%;"/>
-					<div style="max-width:620px; margin: auto; font-family: NanumGothic;">
-						<h3 style="margin-bottom: 50px;"><b>당신의 미래를 바꿉니다.</b></h3>
-						<h5 style="line-height:150%; font-weight: normal;">Headstart는 Data Science에 관한 당신의 커리어 성장을 도울 최적의 프로그램을 제공합니다. 지금, 미래를 바꾸세요.</h5>
-					</div>
-				</div>
-				<div class="col hide-on-small-only l1 valign center-align">
-					<a class="arrow" href=#><i class="fa fa-3x fa-chevron-right" aria-hidden="true"></i></a>
-				</div>
-			</div>
-		</div>
-    <div class="parallax">
-			<!--<img src="{% static 'home/background.jpg' %}" alt="Unsplashed background img 1">-->
-			<video playsinline autoplay muted loop poster="{% static 'home/video.png' %}" style="min-width: 100%; min-height: 100%;">
-				<source src="https://s3.ap-northeast-2.amazonaws.com/headstart-web/Video+(Clean).mp4" type="video/mp4">
-			</video>
-		</div>
+  <div class="navbar-fixed hide-on-large-only" style="position: absolute;">
+    <nav class="z-depth-0" style="background-color: transparent;">
+      <div class="nav-wrapper blue-grey darken-3 " style="background-color: rgba(55,71,79,0.7) !important;">
+        <a href="#!" class="brand-logo"><img src="{% static 'home/logo.png' %}" style="width: 50px; margin-top: 8px;"/></a>
+        <ul class="left">
+          <li><a href="#" class="button-collapse" data-activates="slide-out" style="color: white;"> <i class="small material-icons">view_headline</i></a> </li>
+        </ul>
+        <ul class="right">
+          <li><a class="modal-trigger" href="#modal1" style="color: white;"><i class="small material-icons">perm_identity</i></a></li>
+        </ul>
+      </div>
+    </nav>
   </div>
-	 <div class="blue-grey darken-3 white-text z-depth-2" style="padding-top: 20px; padding-bottom: 30px;">
-		<div class="container">
-			<div class="section center">
-	      <h3>헤드스타트는 한국 <b>데이터사이언스</b> 교육의 <b>기준</b>입니다.</h3>
+
+  <div id="index-banner" class="parallax-container" style="height: 700px; background-color: rgba(57,174,166,0.5);">
+    <div class="section no-pad-bot hide-on-med-and-down">
+      <div class="row l-container" style="margin-top: 30px;">
+        <div class="col s5 row menu-underline">
+          <div class="col s3">
+            <p><a class="arrow" href=# style="font-weight: 200;">Bootcamp</a></p>
+          </div>
+          <div class="col s3">
+            <p><a class="arrow" href=# style="font-weight: 200;">Courses</a></p>
+          </div>
+          <div class="col s3">
+            <p><a class="arrow" href=# style="font-weight: 200;">Events</a></p>
+          </div>
+          <div class="col s3">
+            <p><a class="arrow" href=# style="font-weight: 200;">Alumni</a></p>
+          </div>
+        </div>
+        <div class="col s2" align="center" style="margin-top: -5%;">
+          <img src="{% static 'home/logo.png' %}" style="width: 50%; margin-top: 70px;"/>
+            <!--<a class="arrow" href=# style="font-weight: 200;">Headstart</a>-->
+        </div>
+        <div class="col s5 row menu-underline">
+          <div class="col s3">
+            <p><a class="arrow" href=# style="font-weight: 200;">Team</a></p>
+          </div>
+          <div class="col s3">
+            <p><a class="arrow" href=# style="font-weight: 200;">Contacts</a></p>
+          </div>
+          <div class="col s3 offset-s3" style="text-align: right; margin-top: 12px;">
+            {% if user.is_authenticated %}
+            <a href="/home/logout" class="waves-effect waves btn white modal-trigger" style="border-radius: 50px; color: rgba(0,0,0,0.5); width: 120px; text-transform: initial;">Log-out</a>
+            {%else %}
+            <a href="#modal1" class="waves-effect waves btn white modal-trigger" style="border-radius: 50px; color: rgba(0,0,0,0.5); width: 120px; text-transform: initial;">Log-in</a>
+            {%endif%}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section hide-on-large-only" style="height: 15%;">
+    </div>
+    <div class="section no-pad-bot">
+      <div class="l-container row valign-wrapper" style="height: 550px;">
+        <div class="col hide-on-small-only l1 valign center-align">
+          <a class="arrow" href=#><i class="fa fa-3x fa-chevron-left" aria-hidden="true"></i></a>
+        </div>
+
+        <div class="col s12 l10 valign center-align">
+          <img src="{% static 'home/logo2.png' %}" style="max-width: 315px; width: 100%;"/>
+          <div style="max-width:620px; margin: auto; font-family: NanumGothic;">
+            <h3 style="margin-bottom: 50px;"><b>당신의 미래를 바꿉니다.</b></h3>
+            <h5 style="line-height:150%; font-weight: normal;">Headstart는 Data Science에 관한 당신의 커리어 성장을 도울 최적의 프로그램을 제공합니다. 지금, 미래를 바꾸세요.</h5>
+          </div>
+        </div>
+        <div class="col hide-on-small-only l1 valign center-align">
+          <a class="arrow" href=#><i class="fa fa-3x fa-chevron-right" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="parallax">
+      <!--<img src="{% static 'home/background.jpg' %}" alt="Unsplashed background img 1">-->
+      <video playsinline autoplay muted loop poster="{% static 'home/video.png' %}" style="min-width: 100%; min-height: 100%;">
+        <source src="https://s3.ap-northeast-2.amazonaws.com/headstart-web/Video+(Clean).mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+   <div class="blue-grey darken-3 white-text z-depth-2" style="padding-top: 20px; padding-bottom: 30px;">
+    <div class="container">
+      <div class="section center">
+        <h3>헤드스타트는 한국 <b>데이터사이언스</b> 교육의 <b>기준</b>입니다.</h3>
         <h5>Headstart is the standard of Data science in Korea.</h5>
-   	 	</div>
-  	</div>
-	</div>
+      </div>
+    </div>
+  </div>
   <div class="container">
     <div class="section">
       <!--   Icon Section   -->
-			<div class="row center" style="margin-top: 100px; color: rgba(31,85,95,1);">
-					<h3>당신만을 위한 <b>커리큘럼</b>을 제공합니다.</h3>
-			</div>
+      <div class="row center" style="margin-top: 100px; color: rgba(31,85,95,1);">
+          <h3>당신만을 위한 <b>커리큘럼</b>을 제공합니다.</h3>
+      </div>
       <div class="row">
         <div class="col s12 m4">
           <div class="icon-block">
-						<img src="{% static 'home/info1.png' %}" style="width:100%;" />
+            <img src="{% static 'home/info1.png' %}" style="width:100%;" />
             <h4 class="center teal-text text-lighten-3">학생</h4>
             <p class="light">
                         Headstart는 미국IT 기업의 업무진행방식을 직접 경험할 수 있는 Project를 통한 실습 및    인턴쉽을 제공하며 현장실습교과목을 통한   학점인정이 가능합니다. Headstart는 실제 업무에 사용되는 프로그래밍 역량을 강화하고 취업에 필요한 데이터 포트폴리오를 완성하여  취업까지 이어질 수 있도록 지원해 드립니다.
@@ -267,7 +267,7 @@ function getUserPicture(user_id) {
 
         <div class="col s12 m4">
           <div class="icon-block">
-						<img src="{% static 'home/info2.png' %}" style="width:100%;" />
+            <img src="{% static 'home/info2.png' %}" style="width:100%;" />
             <h4 class="center teal-text text-lighten-3">일반인</h4>
             <p class="light">
                         현업에서 업무역량을 키우고 싶으신 분, 데이터분석가로 커리어 전환하고 싶으신 분, 효율적인 데이터 분석과 실무적용을 위해 Data Science에 대한 Project를 진행합니다. Data Scientist로의 지름길을 찾아 가는데 Headstart 가 함께하겠습니다.
@@ -277,7 +277,7 @@ function getUserPicture(user_id) {
 
         <div class="col s12 m4">
           <div class="icon-block">
-						<img src="{% static 'home/info3.png' %}" style="width:100%;" />
+            <img src="{% static 'home/info3.png' %}" style="width:100%;" />
             <h4 class="center teal-text text-lighten-3">기업</h4>
             <p class="light">
                         Headstart는 실제 미국 IT기업이 데이터를 분석하는 방법과 데이터 활용사례를 기반으로 차별화된 Data Science 관련 사내 교육을 진행합니다. 무수한 데이터 속 올바른 결정을 내리기 힘든 경우, HEADSTART와의 아웃소싱을 통해 최상의 결과를 만들어보십시오.</p>   
@@ -292,60 +292,60 @@ function getUserPicture(user_id) {
   </div>
 
 
-	<style>
-		.white-border {
-			padding: 5% 3% 5% 3% !important;
-			border-color: grey;
-			border-style: solid;
-			border-width: 0.05pt;
-		}
-		.white-border h5{
-			margin-top: 20px;
-			margin-bottom: 40px;
-			font-family: Raleway;
-		}
-		.white-border p {
-			text-align: left;
-			margin-bottom: 40px;
-			height: 203px;
-			overflow: hidden;
-			word-break: break-all;
-		}
-	</style>
+  <style>
+    .white-border {
+      padding: 5% 3% 5% 3% !important;
+      border-color: grey;
+      border-style: solid;
+      border-width: 0.05pt;
+    }
+    .white-border h5{
+      margin-top: 20px;
+      margin-bottom: 40px;
+      font-family: Raleway;
+    }
+    .white-border p {
+      text-align: left;
+      margin-bottom: 40px;
+      height: 203px;
+      overflow: hidden;
+      word-break: break-all;
+    }
+  </style>
   <div class="blue-grey darken-3 white-text">
     <div class="row">
       <div class="col s12 m4 center white-border">
-				<hr style="width: 30pt;">
-				<h5>BOOTCAMP</h5>
-				<p>-	Short Term Intensive Camp<br>
-				-	기초 통계, 데이터 수집, 데이터 분석, 데이터 시각화<br>
-				-	정형화 모델 형성<br>
-				-	Whiteboarding 을 통한 문제 해결 능력 향상<br>
-				-	실리콘 밸리 전문가와의 네트워킹<br>
-				-	미국  IT 기업의 적용사례 학습
-				</p>
-				<a class="waves-effect waves-light btn teal lighten-3 white-text">MORE</a>
+        <hr style="width: 30pt;">
+        <h5>BOOTCAMP</h5>
+        <p>-  Short Term Intensive Camp<br>
+        - 기초 통계, 데이터 수집, 데이터 분석, 데이터 시각화<br>
+        - 정형화 모델 형성<br>
+        - Whiteboarding 을 통한 문제 해결 능력 향상<br>
+        - 실리콘 밸리 전문가와의 네트워킹<br>
+        - 미국  IT 기업의 적용사례 학습
+        </p>
+        <a class="waves-effect waves-light btn teal lighten-3 white-text">MORE</a>
       </div>
-			<div class="col s12 m4 center white-border">
-				<hr style="width: 30pt;">
-				<h5>PROJECT</h5>
-				<p align="left">-	현직 전문가의 Project Managing<br>
-				-	전달식 강의를 벗어난 실전 Project 참여<br>
-				-	미국 IT 기업 업무 Process 적용<br>
-				-	Project 결과 Portfolio 제작<br>
-				-	수준별 Project 참여<br>
-				-	Expert Level 기업 Project 참여</p>
-				<a class="waves-effect waves-light btn teal lighten-3 white-text">MORE</a>
-			</div>
-			<div class="col s12 m4 center white-border">
-				<hr style="width: 30pt;">
-				<h5>ONLINE</h5>
-				<p>-	E-mail 을 통한 매일 학습 가능<br>
-				-	엄선된 Data Structure, Algorithm 문제 제공<br>
-				-	Data Science 기초 , 실전 Level 학습 제공<br>
-				-	R, Phython, SQL 학습<br>
-				-	현직 전문가와의 질의 응답</p>
-				<a class="waves-effect waves-light btn teal lighten-3 white-text" >MORE</a>
+      <div class="col s12 m4 center white-border">
+        <hr style="width: 30pt;">
+        <h5>PROJECT</h5>
+        <p align="left">- 현직 전문가의 Project Managing<br>
+        - 전달식 강의를 벗어난 실전 Project 참여<br>
+        - 미국 IT 기업 업무 Process 적용<br>
+        - Project 결과 Portfolio 제작<br>
+        - 수준별 Project 참여<br>
+        - Expert Level 기업 Project 참여</p>
+        <a class="waves-effect waves-light btn teal lighten-3 white-text">MORE</a>
+      </div>
+      <div class="col s12 m4 center white-border">
+        <hr style="width: 30pt;">
+        <h5>ONLINE</h5>
+        <p>-  E-mail 을 통한 매일 학습 가능<br>
+        - 엄선된 Data Structure, Algorithm 문제 제공<br>
+        - Data Science 기초 , 실전 Level 학습 제공<br>
+        - R, Phython, SQL 학습<br>
+        - 현직 전문가와의 질의 응답</p>
+        <a class="waves-effect waves-light btn teal lighten-3 white-text" >MORE</a>
 
             </div>
         </div>
@@ -353,32 +353,32 @@ function getUserPicture(user_id) {
 
 
 
-	<style>
-		.instr {
-			padding-left: 2%;
-			padding-right: 2%;
-		}
-	</style>
-	<div class="container">
-		<div class="teal-text text-lighten-3" style="font-family: Raleway; margin-top: 60px;">
-			<h3>INSTRUCTOR</h3>
-		</div>
-		<div class="row" style="margin-top: 40px; margin-bottom: 100px;">
-			<div class="col s6 m3 instr"><img class="circle responsive-img" src="{% static 'home/instructor-01.png' %}"/></div>
-			<div class="col s6 m3 instr"><img class="circle responsive-img" src="{% static 'home/instructor-02.png' %}"/></div>
-			<div class="col s6 m3 instr"><img class="circle responsive-img" src="{% static 'home/instructor-03.png' %}"/></div>
-			<div class="col s6 m3 instr"><div class="circle responsive-img blue-grey lighten-4" style="padding-top: 100%;"></div></div>
-		</div>
-	</div>
+  <style>
+    .instr {
+      padding-left: 2%;
+      padding-right: 2%;
+    }
+  </style>
+  <div class="container">
+    <div class="teal-text text-lighten-3" style="font-family: Raleway; margin-top: 60px;">
+      <h3>INSTRUCTOR</h3>
+    </div>
+    <div class="row" style="margin-top: 40px; margin-bottom: 100px;">
+      <div class="col s6 m3 instr"><img class="circle responsive-img" src="{% static 'home/instructor-01.png' %}"/></div>
+      <div class="col s6 m3 instr"><img class="circle responsive-img" src="{% static 'home/instructor-02.png' %}"/></div>
+      <div class="col s6 m3 instr"><img class="circle responsive-img" src="{% static 'home/instructor-03.png' %}"/></div>
+      <div class="col s6 m3 instr"><div class="circle responsive-img blue-grey lighten-4" style="padding-top: 100%;"></div></div>
+    </div>
+  </div>
 
-	<footer class="page-footer blue-grey darken-2">
+  <footer class="page-footer blue-grey darken-2">
     <div class="container" style="padding-top: 40px; padding-bottom: 40px;">
       <div class="row white-text center">
 
-				Headstart Silicon Valley | Address : 3350 Thomas rd, Santa Clara 95054  | E-mail : Info@headstartsv.com<br>
-				대표이사 : Ryan Koo | 개인정보관리 책임자 : 서규원 | 고객센터 TEL : 408-707-0660<br><br>
-				Headstart Silicon Valley, Inc, © 2015
-			</div>	
+        Headstart Silicon Valley | Address : 3350 Thomas rd, Santa Clara 95054  | E-mail : Info@headstartsv.com<br>
+        대표이사 : Ryan Koo | 개인정보관리 책임자 : 서규원 | 고객센터 TEL : 408-707-0660<br><br>
+        Headstart Silicon Valley, Inc, © 2015
+      </div>  
 
     </div>
     <div class="footer-copyright teal lighten-3" style="height: 60px;">
