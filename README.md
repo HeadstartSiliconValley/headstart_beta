@@ -2,23 +2,23 @@
 
 Updated : 2016/08/12
 .
-├── README.md
-├── home
-│   ├── forms.py
-│   ├── views.py
-│   ├── urls.py
-│   ├── migrations
-│   │   ├── 0002_auto_20160809_1823.py
-│   │   ├── 0001_initial.py
-│   │   ├── 0003_customuser_photo.py
-│   │   ├── 0005_auto_20160812_2251.py
-│   │   ├── 0004_auto_20160812_2150.py
-│   │   └── \_\_init\_\_.py
-│   ├── templates
-│   │   ├── home
-│   │   │   └── index.html
-│   │   └── registration
-│   │       └── register.html
+├── README.md  
+├── home  
+│   ├── forms.py  
+│   ├── views.py  
+│   ├── urls.py  
+│   ├── migrations  
+│   │   ├── 0002_auto_20160809_1823.py  
+│   │   ├── 0001_initial.py  
+│   │   ├── 0003_customuser_photo.py  
+│   │   ├── 0005_auto_20160812_2251.py  
+│   │   ├── 0004_auto_20160812_2150.py  
+│   │   └── \_\_init\_\_.py  
+│   ├── templates  
+│   │   ├── home  
+│   │   │   └── index.html  
+│   │   └── registration  
+│   │       └── register.html  
 │   ├── static
 │   │   └── home
 │   │       ├── background0.jpg
