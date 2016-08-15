@@ -66,16 +66,18 @@
     text-align: center;
   }
   .l-container {
-    margin-left: 3%;
-    margin-right: 3%;
+    margin-left: 5%;
+    margin-right: 5%;
   }
   </style>
   <ul id="slide-out" class="side-nav">
-    <li><div class="userView">
-      <a href="#!user"><img class="responsive-img circle" src="{% static 'home/instructor-03.png' %}"></a>
-      <a href="#!name"><span class="name"><b>Ryan Koo</b></span></a>
-      <a href="#!email"><span class="email">info@headstartsv.com</span></a>
-    </div></li>
+    <li>
+      <div class="userView">
+        <a href="#!user"><img class="responsive-img circle" src="{% static 'home/instructor-03.png' %}"></a>
+        <a href="#!name"><span class="name"><b>Ryan Koo</b></span></a>
+        <a href="#!email"><span class=s"email">info@headstartsv.com</span></a>
+      </div>
+    </li>
     <li><a href="#!"><i class="material-icons">cloud</i>Profile</a></li>
     <li><div class="divider"></div></li>
     <li><a href="#" class="subheader">Menu</a></li>
@@ -119,7 +121,7 @@
           </div>
         </div>
         <div class="col s2" align="center" style="margin-top: -5%;">
-          <img src="{% static 'home/logo.png' %}" style="width: 50%; margin-top: 70px;"/>
+         <a href=#><img src="{% static 'home/logo.png' %}" style="width: 50%; margin-top: 70px;"/></a>
             <!--<a class="arrow" href=# style="font-weight: 200;">Headstart</a>-->
         </div>
         <div class="col s5 row menu-underline">
@@ -127,7 +129,7 @@
             <p><a class="arrow" href=# style="font-weight: 200;">Team</a></p>
           </div>
           <div class="col s3">
-            <p><a class="arrow" href=# style="font-weight: 200;">Contacts</a></p>
+            <p><a class="arrow" href="#footer" style="font-weight: 200;">Contacts</a></p>
           </div>
           <div class="col s3 offset-s3" style="text-align: right; margin-top: 12px;">
             {% if user.is_authenticated %}
@@ -298,19 +300,64 @@
     </div>
   </div>
 
-  <footer class="page-footer blue-grey darken-2">
-    <div class="container" style="padding-top: 40px; padding-bottom: 40px;">
-      <div class="row white-text center">
+  <div class="container">
+  <!--
+    <div class="center grey-text text-darken-2" style="font-family: Raleway; margin-top: 60px;">
+      <h3>INTERESTED?</h3>
+      <p>If you're interested in any of our courses, please get in touch</p>
+      <div class="row">
+        <div class="col s8 offset-s2">
+          <input placeholder="EMAIL" id="email" type="email" class="validate">
+        </div>
+        <div class="col s8 offset-s2">
+          <div class="input-field">
+            <textarea id="textarea1" class="materialize-textarea" length="120"></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="center" style="margin-bottom: 150px;">
+          <a class="waves-effect waves-light btn-large">Send</a>
+      </div>
+    </div>-->
 
-        Headstart Silicon Valley | Address : 3350 Thomas rd, Santa Clara 95054  | E-mail : Info@headstartsv.com<br>
-        대표이사 : Ryan Koo | 개인정보관리 책임자 : 서규원 | 고객센터 TEL : 408-707-0660<br><br>
-        Headstart Silicon Valley, Inc, © 2015
-      </div>  
+  </div>
 
+  <footer class="page-footer blue-grey darken-2" id="footer">
+    <div class="container row" style="padding-top: 40px; padding-bottom: 40px;">
+        <div class="grey-text text-lighten-2 col s12 m5 l5">
+            <h5>
+                CONTACTS
+            </h5>
+            <p>
+            Headstart Silicon Valley <br>3350 Thomas rd, Santa Clara 95054<br>Info@headstartsv.com<br>
+            (+1) 408-707-0660<br><br>
+            </p>
+        </div>
+        <div class="col s12 m7 l7">
+            <form style="color: #9e9e9e">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input placeholder="" id="your-email" type="email" class="validate">
+                        <label for="your-email" data-error="Please check your email again.">Email address</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <textarea placeholder="" id="your-message" class="materialize-textarea"></textarea>
+                        <label for="your-message">Message</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s12">
+                        <button id="send-message" class="btn">SEND</button>
+                    </div>
+                </div>
+            </form>
+        </div>
     </div>
     <div class="footer-copyright teal lighten-3" style="height: 60px;">
       <div class="container">
-      Made by <a class="white-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+      Headstart Silicon Valley, Inc, © 2016
       </div>
     </div>
     </footer>
@@ -353,15 +400,11 @@
 				<div id="naver_id_login"></div>
 			</div>
         </div>
-
         <div class="modal-footer">
-            <a href="{% url 'home:register' %}" style="float: left; font-weight: 300;" class="align-right modal-action modal-close waves-effect waves-light btn-flat">Sign Up</a>
-        
-            <button type="submit"  value="Login" id="login-button">Login</button>
+            <a href="{% url 'home:register' %}" style="float: left; font-weight: 300;" class="align-right modal-action modal-close waves-effect waves-light btn-flat">Sign Up</a> 
+            <button class="btn-flat " type="submit" value="Login" id="login-button">Sign-in</button>
         </div>
-
         </form>
-
     </div>
 
   <!--  Scripts-->

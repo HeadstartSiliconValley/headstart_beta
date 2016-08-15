@@ -1,3 +1,9 @@
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
+
+# Database (Due to security issues)
+*.sqlite3
+
+# jetbrain resources
+.idea/*

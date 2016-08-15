@@ -8,7 +8,7 @@ from django.shortcuts import render_to_response
 from django.http import HttpResponseRedirect
 from django.template import RequestContext
 
-from .models import CustomUser
+from accounts.models import CustomUser
  
 
 
@@ -24,7 +24,7 @@ Login
 @csrf_protect
 def register(request):
     if request.method == 'POST':
-        form = RegistrationForm(request.POST)
+        form = RegistrationForm(request.POST, request.FILES)
         if form.is_valid():
             
             user = User.objects.create_user(
@@ -37,8 +37,9 @@ def register(request):
             user = user,
             phone = form.cleaned_data['phone'],
             grade = form.cleaned_data['grade'],
-
+            photo = request.FILES['image']
             )
+
             return HttpResponseRedirect('/home')
     else:
         form = RegistrationForm()
@@ -51,13 +52,16 @@ def register(request):
     variables,
     )
 
+
+
+
 def logout_page(request):
     logout(request)
     return HttpResponseRedirect('/home')
  
 @login_required
-def home(request):
+def personal(request):
     return render_to_response(
-    'login.html',
+        'home/personal.html',
     { 'user': request.user }
     )
