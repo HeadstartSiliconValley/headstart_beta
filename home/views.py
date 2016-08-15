@@ -13,7 +13,7 @@ from .models import CustomUser
 
 
 def index(request):
-	return render(request,'home/login.html', 
+	return render(request,'home/index.html', 
             { 'user': request.user }
          )
 
