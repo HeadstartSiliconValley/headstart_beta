@@ -154,9 +154,9 @@
     <li><a href="#!"><i class="material-icons">cloud</i>Profile</a></li>
     <li><div class="divider"></div></li>
     <li><a href="#" class="subheader">Menu</a></li>
-    <li><a class="waves-effect" href="#!">Bootcamp</a></li>
-    <li><a class="waves-effect" href="#!">Courses</a></li>
-    <li><a class="waves-effect" href="#!">Events</a></li>
+    <li><a class="waves-effect" href="{% url 'bootcamp:index' %}">Bootcamp</a></li>
+    <li><a class="waves-effect" href="{% url 'courses:index' %}!"">Courses</a></li>
+    <li><a class="waves-effect" href="{% url 'events:index' %}!"">Events</a></li>
     <li><a class="waves-effect" href="#!">Alumini</a></li>
     <li><a class="waves-effect" href="#!">Team</a></li>
     <li><a class="waves-effect" href="#!">Contact</a></li>
@@ -181,13 +181,13 @@
       <div class="row l-container" style="margin-top: 30px;">
         <div class="col s5 row menu-underline">
           <div class="col s3">
-            <p><a class="arrow" href=# style="font-weight: 200;">Bootcamp</a></p>
+            <p><a class="arrow" href="{% url 'bootcamp:index' %}" style="font-weight: 200;">Bootcamp</a></p>
           </div>
           <div class="col s3">
-            <p><a class="arrow" href=# style="font-weight: 200;">Courses</a></p>
+            <p><a class="arrow" href="{% url 'courses:index' %}" style="font-weight: 200;">Courses</a></p>
           </div>
           <div class="col s3">
-            <p><a class="arrow" href=# style="font-weight: 200;">Events</a></p>
+            <p><a class="arrow" href="{% url 'events:index' %}" style="font-weight: 200;">Events</a></p>
           </div>
           <div class="col s3">
             <p><a class="arrow" href=# style="font-weight: 200;">Alumni</a></p>
